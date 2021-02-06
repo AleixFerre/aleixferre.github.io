@@ -50,12 +50,15 @@
 					<h6>Soy</h6>
 					<h1>Aleix Ferré</h1>
 					<p>
-						Me llamo <b>Aleix Ferré Juan</b>, soy de Girona (España), tengo 20 años y soy Desarrollador de
-						Videojuegos.
+						Me llamo <b>Aleix Ferré Juan</b>, soy de Girona (España), tengo
+						<script>
+							document.write(new Date().getFullYear() - 2000);
+						</script>
+						años y soy Desarrollador de Videojuegos.
 					</p>
 					<a href="/es/portfolio" class="primary-btn text-uppercase">Ver mis proyectos</a> </br>
 				</div>
-				<div class="col-lg-6 col-md-6 ">
+				<div class="col-lg-6 col-md-6">
 					<img class="img-fluid" src="/img/portrait.png" alt="">
 				</div>
 			</div>
@@ -85,13 +88,17 @@
 	<section class="facts-area section-gap" id="facts-area">
 		<div class="container">
 			<div class="row">
-				<div class="col-md-6 single-fact">
-					<h1 class="counter">6</h1>
-					<p>Renders</p>
-				</div>
-				<div class="col-md-6 single-fact">
+				<div class="col-md-4 single-fact">
 					<h1 class="counter">3</h1>
 					<p>Videojuegos</p>
+				</div>
+				<div class="col-md-4 single-fact">
+					<h1 class="counter">3</h1>
+					<p>Proyectos</p>
+				</div>
+				<div class="col-md-4 single-fact">
+					<h1 class="counter">6</h1>
+					<p>Renders</p>
 				</div>
 			</div>
 		</div>
@@ -120,12 +127,14 @@
 							</div>
 							<a href="https://aleixferre.itch.io/ruin-house" class="img-pop-up">
 								<div class="middle">
-									<div class="text align-self-center d-flex"><img style="height: 80px;" src="/img/elements/eye.svg" alt=""></div>
+									<div class="text align-self-center d-flex"><img style="height: 80px;"
+											src="/img/elements/eye.svg" alt=""></div>
 								</div>
 							</a>
 						</div>
 						<div class="p-inner">
 							<h4>Ruin House</h4>
+							<div class="cat">Tienes una casa por delante que reparar! Ponte <b>manos a la obra</b>, nunca mejor dicho.</div>
 							<div class="cat">13 DE JUNIO DE 2020</div>
 						</div>
 					</div>
@@ -138,12 +147,14 @@
 							</div>
 							<a href="https://aleixferre.itch.io/ruin-house" class="img-pop-up">
 								<div class="middle">
-									<div class="text align-self-center d-flex"><img style="height: 80px;" src="/img/elements/eye.svg" alt=""></div>
+									<div class="text align-self-center d-flex"><img style="height: 80px;"
+											src="/img/elements/eye.svg" alt=""></div>
 								</div>
 							</a>
 						</div>
 						<div class="p-inner">
 							<h4>PRAELIA</h4>
+							<div class="cat">Bienvenido al <b>futuro</b>. Amaneces en una nave llena de enemigos, tienes que <b>escapar, Y RAPIDO!</b></div>
 							<div class="cat">26 DE ENERO DE 2020</div>
 						</div>
 					</div>
@@ -156,12 +167,14 @@
 							</div>
 							<a href="https://aleixferre.itch.io/throw88" class="img-pop-up">
 								<div class="middle">
-									<div class="text align-self-center d-flex"><img style="height: 80px;" src="/img/elements/eye.svg" alt=""></div>
+									<div class="text align-self-center d-flex"><img style="height: 80px;"
+											src="/img/elements/eye.svg" alt=""></div>
 								</div>
 							</a>
 						</div>
 						<div class="p-inner">
 							<h4>Throw 88</h4>
+							<div class="cat">El juego al reves. <b>NO hagas</b> lo que el cuerpo de incita a hacer y <b>resuelve los puzzles</b>!</div>
 							<div class="cat">29 DE SEPTIEMBRE DE 2019</div>
 						</div>
 					</div>
@@ -170,7 +183,87 @@
 		</div>
 	</section>
 
-	<section class="portfolio-area" id="portfolio-renders">
+	<section class="portfolio-area" id="portfolio-projects">
+		<div class="container">
+			<div class="row d-flex justify-content-center">
+				<div class="menu-content pb-70 col-lg-8">
+					<div class="title text-center">
+						<h1 class="mb-10">Proyectos Recientes</h1>
+						<p>Estos son mis proyectos de programación recientes.</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="filters-content">
+				<div class="row grid">
+					<div class="single-portfolio col-sm-4 all vector">
+						<div class="relative">
+							<div class="thumb">
+								<div class="overlay overlay-bg"></div>
+								<img class="image img-fluid" src="/img/projects/totfet/banner.png" alt="">
+							</div>
+							<a href="https://github.com/CatalaHD/TotFet" class="img-pop-up">
+								<div class="middle">
+									<div class="text align-self-center d-flex"><img style="height: 80px;"
+											src="/img/elements/eye.svg" alt=""></div>
+								</div>
+							</a>
+						</div>
+						<div class="p-inner">
+							<h4>TotFet</h4>
+							<div class="cat"><b>TotFet</b> es una aplicación desarrollada en <b>Flutter</b> que permite
+								gestionar tus llistas de la compra y tareas online con integración con <b>Bases de Datos
+									en tiempo real</b>.</div>
+							<div class="cat">18 DE SEPTIEMBRE DE 2020</div>
+						</div>
+					</div>
+					<div class="single-portfolio col-sm-4 all raster">
+						<div class="relative">
+							<div class="thumb">
+								<div class="overlay overlay-bg"></div>
+								<img class="image img-fluid" src="/img/projects/clocks/clocks.png" alt="">
+							</div>
+							<a href="https://catalahd.github.io/Clocks/" class="img-pop-up">
+								<div class="middle">
+									<div class="text align-self-center d-flex"><img style="height: 80px;"
+											src="/img/elements/eye.svg" alt=""></div>
+								</div>
+							</a>
+						</div>
+						<div class="p-inner">
+							<h4>Clocks</h4>
+							<div class="cat"><b>Clocks</b> es una aplicación web que permite visualizar un reloj
+								<b>completamente personalizable</b>. Este link lo puedes usar como fondo de pantalla con
+								aplicaciones como <b>Wallpaper Engine</b>!</div>
+							<div class="cat">6 DE AGOSTO DE 2020</div>
+						</div>
+					</div>
+					<div class="single-portfolio col-sm-4 all ui">
+						<div class="relative">
+							<div class="thumb">
+								<div class="overlay overlay-bg"></div>
+								<img class="image img-fluid" src="/img/projects/catabot/banner.png" alt="">
+							</div>
+							<a href="https://catalahd.github.io/CataBot/" class="img-pop-up">
+								<div class="middle">
+									<div class="text align-self-center d-flex"><img style="height: 80px;"
+											src="/img/elements/eye.svg" alt=""></div>
+								</div>
+							</a>
+						</div>
+						<div class="p-inner">
+							<h4>CataBOT</h4>
+							<div class="cat"><b>CataBOT</b> es un bot de Discord en Catalán que te permite aprovechar al
+								100% tu experiencia con los servidores de Discord.</div>
+							<div class="cat">9 DE JUNIO DE 2020</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="portfolio-area section-gap" id="portfolio-renders">
 		<div class="container">
 			<div class="row d-flex justify-content-center">
 				<div class="menu-content pb-70 col-lg-8">
@@ -191,7 +284,8 @@
 							</div>
 							<a href="/img/renders/alien.jpg" class="img-pop-up">
 								<div class="middle">
-									<div class="text align-self-center d-flex"><img style="height: 80px;" src="/img/elements/eye.svg" alt=""></div>
+									<div class="text align-self-center d-flex"><img style="height: 80px;"
+											src="/img/elements/eye.svg" alt=""></div>
 								</div>
 							</a>
 						</div>
@@ -208,7 +302,8 @@
 							</div>
 							<a href="/img/renders/cobblestone.jpg" class="img-pop-up">
 								<div class="middle">
-									<div class="text align-self-center d-flex"><img style="height: 80px;" src="/img/elements/eye.svg" alt=""></div>
+									<div class="text align-self-center d-flex"><img style="height: 80px;"
+											src="/img/elements/eye.svg" alt=""></div>
 								</div>
 							</a>
 						</div>
@@ -225,7 +320,8 @@
 							</div>
 							<a href="/img/renders/monster.jpg" class="img-pop-up">
 								<div class="middle">
-									<div class="text align-self-center d-flex"><img style="height: 80px;" src="/img/elements/eye.svg" alt=""></div>
+									<div class="text align-self-center d-flex"><img style="height: 80px;"
+											src="/img/elements/eye.svg" alt=""></div>
 								</div>
 							</a>
 
@@ -243,7 +339,8 @@
 							</div>
 							<a href="/img/renders/pawn.jpg" class="img-pop-up">
 								<div class="middle">
-									<div class="text align-self-center d-flex"><img style="height: 80px;" src="/img/elements/eye.svg" alt=""></div>
+									<div class="text align-self-center d-flex"><img style="height: 80px;"
+											src="/img/elements/eye.svg" alt=""></div>
 								</div>
 							</a>
 						</div>
@@ -260,7 +357,8 @@
 							</div>
 							<a href="/img/renders/run.jpg" class="img-pop-up">
 								<div class="middle">
-									<div class="text align-self-center d-flex"><img style="height: 80px;" src="/img/elements/eye.svg" alt=""></div>
+									<div class="text align-self-center d-flex"><img style="height: 80px;"
+											src="/img/elements/eye.svg" alt=""></div>
 								</div>
 							</a>
 						</div>
@@ -277,7 +375,8 @@
 							</div>
 							<a href="/img/renders/triangle.jpg" class="img-pop-up">
 								<div class="middle">
-									<div class="text align-self-center d-flex"><img style="height: 80px;" src="/img/elements/eye.svg" alt=""></div>
+									<div class="text align-self-center d-flex"><img style="height: 80px;"
+											src="/img/elements/eye.svg" alt=""></div>
 								</div>
 							</a>
 						</div>
