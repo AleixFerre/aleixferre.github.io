@@ -3075,7 +3075,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 
 .timeline ul li .content {
   background-color: white !important;
-  box-shadow: 0px 10px 27px 3px rgba(204, 204, 204, 0.2);
+  box-shadow: 0px 10px 27px 3px rgba(204, 204, 204, 0.5);
   position: relative;
   top: 7px;
   width: 360px;
