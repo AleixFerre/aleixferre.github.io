@@ -1,0 +1,70 @@
+<div class="grid list">
+  <div class="button" (click)="projectsService.setCurrentlyActiveId(null)">
+    <img class="back" src="assets/back.svg" />
+    <span>See All</span>
+  </div>
+  @for (item of projects; track $index; let i = $index) {
+  <div class="box project" style="background-image: url('{{ item.backgroundImage }}');"
+    [ngClass]="{'large': item.class === 'large', 'selected': projectsService.currentlyActiveId === item.id}"
+    (click)="projectsService.setCurrentlyActiveId(item.id)">
+    <img src="{{ item.image }}" class="inner" alt="{{ item.name }}" />
+  </div>
+  }
+</div>
+
+@let currentProject = findProject(projectsService.currentlyActiveId!);
+<div class="details">
+  @if (showPreview) {
+  <div class="appear-lite">
+    <div class="row ">
+      <h2 class="title">{{ currentProject.name }}</h2>
+      @if (currentProject.additionalUrl) {
+      <a class="button" [href]="currentProject.additionalUrl[0]" target="_blank">
+        {{ currentProject.additionalUrl[1] }}
+      </a>
+      }
+      <a class="button" [href]="currentProject.url" target="_blank">Visit Project</a>
+    </div>
+    <p>{{ currentProject.description }}</p>
+    @if (currentProject.images) {
+    <app-gallery [images]="currentProject.images"></app-gallery>
+    }
+    @if (currentProject.details) {
+    <h3>Details</h3>
+    <ul>
+      @for (detail of currentProject.details | keyvalue: keepOrder; track $index) {
+      <li><b>{{ detail.key }}:</b><span> {{ detail.value }}</span></li>
+      }
+    </ul>
+    }
+    @if (currentProject.goodForYouIf) {
+    <div>
+      <h3>Good for you if</h3>
+      <ul>
+        @for (goodForYouIf of currentProject.goodForYouIf; track $index) {
+        <li>{{ goodForYouIf }}</li>
+        }
+      </ul>
+    </div>
+    }
+    @if (currentProject.whatILearned) {
+    <div>
+      <h3>What I learned</h3>
+      <ul>
+        @for (whatILearned of currentProject.whatILearned; track $index) {
+        <li>{{ whatILearned }}</li>
+        }
+      </ul>
+    </div>
+    }
+    <h3>Project Timeline</h3>
+    <p>{{ currentProject.createdAt | date: 'MMMM yyyy' }} -
+      @if (currentProject.finishedAt) {
+      <span>{{ currentProject.finishedAt | date: 'MMMM yyyy' }} ({{ getProjectDuration(currentProject) }})</span>
+      } @else {
+      <span>In Progress</span>
+      }
+    </p>
+  </div>
+  }
+</div>

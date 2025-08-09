@@ -1,0 +1,19 @@
+.gallery {
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  align-items: center;
+
+  .screenshot {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    transition: transform 0.2s ease-in-out;
+    cursor: pointer;
+
+    &:hover {
+      transform: scale(1.02);
+    }
+  }
+}

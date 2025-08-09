@@ -1,0 +1,52 @@
+@defer (on viewport) {
+<div class="grid">
+  <div class="box profile">
+    <p class="name">Aleix Ferré</p>
+    <p class="age">{{ age }} years old</p>
+    <p class="age">Girona</p>
+  </div>
+  <div class="box">
+    <p>Education</p>
+    <div class="list">
+      <app-metric-container class="box center" title="Game Design and Development Degree" number="2017" symbol="-"
+        numberAfterSymbol="2021" [small]="true" description="University of Girona">
+      </app-metric-container>
+    </div>
+  </div>
+  <div class="box clickable" (click)="goToContact()">
+    <p>Get in touch</p>
+    <div class="touch">
+      <lord-icon trigger="in" src="/assets/contact/contact.json" colors="primary:white" stroke="bold" state="in-reveal"
+        style="width: 200px; height: 200px;">
+      </lord-icon>
+    </div>
+  </div>
+  <div class="box large-both">
+    <p>Professional Experience</p>
+    <div class="list">
+      <app-metric-container class="box center" title="Co-Founder" number="2023" symbol="-" numberAfterSymbol="Present"
+        [small]="true" description="Yuuko Games">
+      </app-metric-container>
+      <app-metric-container class="box center" title="Senior Web & Mobile Developer" number="2023" symbol="-"
+        numberAfterSymbol="Present" [small]="true" description="ClearPeaks">
+      </app-metric-container>
+      <app-metric-container class="box center" title="Junior Web Developer" number="2021" symbol="-"
+        numberAfterSymbol="2023" [small]="true" description="ClearPeaks">
+      </app-metric-container>
+    </div>
+  </div>
+  <div class="box large-vertical">
+    <p>Languages</p>
+    <div class="list">
+      <app-metric-container class="box center" number="English" [small]="true" description="Full Professional">
+      </app-metric-container>
+      <app-metric-container class="box center" number="Spanish" [small]="true" description="Native">
+      </app-metric-container>
+      <app-metric-container class="box center" number="Catalan" [small]="true" description="Native">
+      </app-metric-container>
+    </div>
+  </div>
+</div>
+} @placeholder {
+<div></div>
+}

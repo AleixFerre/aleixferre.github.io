@@ -1,0 +1,45 @@
+{
+  "name": "portfolio-folders",
+  "version": "0.0.0",
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build",
+    "watch": "ng build --watch --configuration development",
+    "test": "ng test",
+    "deploy": "ng deploy --base-href=https://aleixferre.github.io/"
+  },
+  "private": true,
+  "dependencies": {
+    "@angular/animations": "^20.1.4",
+    "@angular/cdk": "^20.1.4",
+    "@angular/common": "^20.1.4",
+    "@angular/compiler": "^20.1.4",
+    "@angular/core": "^20.1.4",
+    "@angular/forms": "^20.1.4",
+    "@angular/platform-browser": "^20.1.4",
+    "@angular/platform-browser-dynamic": "^20.1.4",
+    "@angular/router": "^20.1.4",
+    "@lordicon/element": "^2.0.1",
+    "@unpic/angular": "^1.0.0",
+    "angular-cli-ghpages": "^2.0.0-beta.2",
+    "lottie-web": "^5.13.0",
+    "ng-gallery": "^12.0.0",
+    "rxjs": "~7.8.0",
+    "tslib": "^2.3.0",
+    "zone.js": "~0.15.0"
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "^20.1.4",
+    "@angular/cli": "^20.1.4",
+    "@angular/compiler-cli": "^20.1.4",
+    "@types/jasmine": "~5.1.0",
+    "jasmine-core": "~5.5.0",
+    "karma": "~6.4.0",
+    "karma-chrome-launcher": "~3.2.0",
+    "karma-coverage": "~2.2.0",
+    "karma-jasmine": "~5.1.0",
+    "karma-jasmine-html-reporter": "~2.1.0",
+    "typescript": "~5.8.3"
+  }
+}

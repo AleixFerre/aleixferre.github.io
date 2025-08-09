@@ -1,3 +1,3 @@
-# Website
+# Aleix Ferré Portfolio
 
-Hi! I'm Aleix and this is my little site.
+This is the source code for my personal portfolio website. It showcases my projects, experience, and skills.
