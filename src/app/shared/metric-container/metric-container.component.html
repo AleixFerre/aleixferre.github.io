@@ -1,0 +1,9 @@
+<p class="title">{{ title }}</p>
+<div class="metric">
+  <div class="data" [ngClass]="{'small': small}">
+    <span class="number">{{ number }}</span>
+    {{ symbol }}
+    <span class="number">{{ numberAfterSymbol }}</span>
+  </div>
+  <div>{{ description }}</div>
+</div>

@@ -1,0 +1,30 @@
+.title {
+  font-size: 0.8em;
+  text-align: center;
+  margin: 0;
+}
+
+.metric {
+  font-size: 1em;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .data {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    font-size: 5em;
+
+    &.small {
+      font-size: 3em;
+    }
+
+    .number {
+      color: #a078ff;
+      font-weight: bold;
+    }
+  }
+}

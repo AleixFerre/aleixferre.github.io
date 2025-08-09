@@ -1,0 +1,44 @@
+@defer (on viewport) {
+<div class="grid">
+  <div class="box profile" (click)="goToProfile()">
+    <img src="/assets/profile/yo_letra.webp" class="profile-image" alt="Aleix Ferré" />
+    <p class="name">Gameplay Programmer <br> & Designer</p>
+  </div>
+  <div class="box">
+    <p>Experience</p>
+    <div class="grid experience">
+      <div class="box experience">
+        <app-metric-container title="Indie Games" number="6" symbol="+" description="years">
+        </app-metric-container>
+      </div>
+      <div class="box experience">
+        <app-metric-container title="Web & Mobile" number="3" symbol="+" description="years">
+        </app-metric-container>
+      </div>
+    </div>
+  </div>
+  <div class="box">
+    <p>Specialized In</p>
+    <div class="grid specialized">
+      <app-icon-text class="specialization" text="Unity" icon="/assets/tecnologies/unity.webp"></app-icon-text>
+      <app-icon-text class="specialization" text="Game Design"
+        icon="/assets/tecnologies/game_design.webp"></app-icon-text>
+      <app-icon-text class="specialization" text="Project Management"
+        icon="/assets/tecnologies/project_management.webp"></app-icon-text>
+    </div>
+  </div>
+  <div class="box large">
+    <p>Featured Projects</p>
+    <div class="grid projects">
+      @for (item of projects; track $index) {
+      <div class="box project" style="background-image: url('{{ item.backgroundImage }}');"
+        [ngClass]="{'large': item.class === 'large'}" (click)="selectGame(item.id)">
+        <img src="{{ item.image }}" alt="{{ item.name }}" />
+      </div>
+      }
+    </div>
+  </div>
+</div>
+} @placeholder {
+<div></div>
+}

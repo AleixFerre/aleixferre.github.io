@@ -1,0 +1,18 @@
+@defer (on viewport) {
+@if (projectsService.currentlyActiveId === null) {
+<div class="grid appear">
+  @for (item of projects; track $index) {
+  <div class="box project" style="background-image: url('{{ item.backgroundImage }}');"
+    [ngClass]="{'large': item.class === 'large'}" (click)="projectsService.setCurrentlyActiveId(item.id)">
+    <img src="{{ item.image }}" alt="{{ item.name }}" />
+  </div>
+  }
+</div>
+}
+@else {
+<app-projects-details class="row appear"></app-projects-details>
+}
+}
+@placeholder {
+<div></div>
+}
