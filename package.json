@@ -22,7 +22,7 @@
     "@angular/router": "^20.1.4",
     "@lordicon/element": "^2.0.1",
     "@unpic/angular": "^1.0.0",
-    "angular-cli-ghpages": "^2.0.0-beta.2",
+    "angular-cli-ghpages": "^2.0.3",
     "lottie-web": "^5.13.0",
     "ng-gallery": "^12.0.0",
     "rxjs": "~7.8.0",
