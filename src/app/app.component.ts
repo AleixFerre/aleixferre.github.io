@@ -1,5 +1,7 @@
 import { NgClass } from '@angular/common';
 import { Component } from '@angular/core';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import { NavigationEnd, Router } from '@angular/router';
 import { AboutContentComponent } from './about-content/about-content.component';
 import { TABS, TABS_LIST } from './app.model';
 import { BackgroundStarsComponent } from './background-stars/background-stars.component';
@@ -23,16 +25,23 @@ import { TabService } from './tab.service';
   styleUrl: './app.component.scss',
 })
 export class AppComponent {
-  constructor(public tabService: TabService) {}
-
   keepOrder = keepOrder;
+
+  TABS = TABS;
 
   tabsListEntries: [TABS, string][] = Object.entries(TABS_LIST) as [
     TABS,
     string
   ][];
 
-  TABS = TABS;
+  constructor(public tabService: TabService, private router: Router) {
+    this.router.events.pipe(takeUntilDestroyed()).subscribe((event) => {
+      if (event instanceof NavigationEnd) {
+        const name = event.url.split('/')[1].toUpperCase();
+        this.tabService.setCurrentTab(name as TABS, false);
+      }
+    });
+  }
 
   selectTab(tab: TABS) {
     this.tabService.setCurrentTab(tab);
