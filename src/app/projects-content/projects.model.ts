@@ -37,8 +37,8 @@ const YuukoGamesProject: Project = {
   backgroundImage: '/assets/projects/yuukogames/yuukogames_bg.webp',
   images: [
     '/assets/projects/yuukogames/yuukogames-1.webp',
-    '/assets/projects/yuukogames/yuukogames-1.webp',
-    '/assets/projects/yuukogames/yuukogames-1.webp',
+    '/assets/projects/yuukogames/yuukogames-2.webp',
+    // '/assets/projects/yuukogames/yuukogames-3.webp',
   ],
   details: {
     'Main Focus': 'Game Development and Design',
