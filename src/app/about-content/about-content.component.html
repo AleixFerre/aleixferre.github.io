@@ -5,20 +5,20 @@
     <p class="age">{{ age }} years old</p>
     <p class="age">Girona</p>
   </div>
-  <div class="box">
-    <p>Education</p>
-    <div class="list">
-      <app-metric-container class="box center" title="Game Design and Development Degree" number="2017" symbol="-"
-        numberAfterSymbol="2021" [small]="true" description="University of Girona">
-      </app-metric-container>
-    </div>
-  </div>
   <div class="box clickable" (click)="goToContact()">
     <p>Get in touch</p>
     <div class="touch">
       <lord-icon trigger="in" src="/assets/contact/contact.json" colors="primary:white" stroke="bold" state="in-reveal"
         style="width: 200px; height: 200px;">
       </lord-icon>
+    </div>
+  </div>
+  <div class="box">
+    <p>Education</p>
+    <div class="list">
+      <app-metric-container class="box center" title="Game Design and Development Degree" number="2017" symbol="-"
+        numberAfterSymbol="2021" [small]="true" description="University of Girona">
+      </app-metric-container>
     </div>
   </div>
   <div class="box large-both">

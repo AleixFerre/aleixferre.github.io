@@ -8,6 +8,10 @@
 .info {
   margin: 5px 0;
   font-size: 0.8em;
+
+  @media screen and (max-width: 1000px) {
+    margin: 10px 0 0 0;
+  }
 }
 
 a {
@@ -23,7 +27,7 @@ a {
   width: 100%;
   height: 100%;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1000px) {
     display: flex;
     flex-direction: column;
   }
@@ -49,5 +53,21 @@ a {
 
   &.large {
     grid-column: span 2;
+  }
+
+  .icon {
+    width: 200px;
+    height: 200px;
+
+    @media screen and (max-width: 1000px) {
+      width: 100px;
+      height: 100px;
+    }
+  }
+
+  .name {
+    @media screen and (max-width: 1000px) {
+      margin-bottom: 0;
+    }
   }
 }

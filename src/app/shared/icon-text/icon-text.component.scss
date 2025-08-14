@@ -2,9 +2,18 @@
   width: 100%;
   aspect-ratio: 1;
   filter: contrast(0.9) brightness(0.9);
+
+  @media screen and (max-width: 1000px) {
+    width: 8em;
+    height: 8em;
+  }
 }
 
 .text {
   text-align: center;
   font-size: 0.8em;
+
+  @media screen and (max-width: 1000px) {
+    font-size: 1.4em;
+  }
 }

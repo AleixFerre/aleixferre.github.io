@@ -1,13 +1,35 @@
 $margin-p: 8px;
 
+.mobile-only {
+  display: none !important;
+}
+
+.not-mobile-only {
+  display: auto !important;
+}
+
+@media screen and (max-width: 1000px) {
+  .mobile-only {
+    display: flex !important;
+  }
+
+  .not-mobile-only {
+    display: none !important;
+  }
+}
+
 .details {
   flex: 1;
   background-color: rgba(240, 248, 255, 0.103);
-  padding: 2rem;
+  padding: 2em;
   border-radius: 10px;
   font-family: "PT Sans", sans-serif;
   height: 70vh;
   overflow: auto;
+
+  @media screen and (max-width: 1000px) {
+    height: auto;
+  }
 
   .row {
     display: flex;
@@ -25,7 +47,7 @@ $margin-p: 8px;
       border-radius: 10px;
       padding: 10px;
       display: flex;
-      padding: 1rem;
+      padding: 1em;
       align-items: center;
       justify-content: center;
       gap: 10px;
@@ -60,7 +82,7 @@ $margin-p: 8px;
     overflow: visible;
   }
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1000px) {
     display: flex;
     flex-direction: column;
   }

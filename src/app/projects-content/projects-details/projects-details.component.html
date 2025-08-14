@@ -1,4 +1,4 @@
-<div class="grid list">
+<div class="grid list not-mobile-only">
   <div class="button" (click)="projectsService.setCurrentlyActiveId(null)">
     <img class="back" src="assets/back.svg" />
     <span>See All</span>
@@ -17,13 +17,22 @@
   @if (showPreview) {
   <div class="appear-lite">
     <div class="row ">
+      <div class="button mobile-only" (click)="projectsService.setCurrentlyActiveId(null)">
+        <img class="back" src="assets/back.svg" />
+      </div>
       <h2 class="title">{{ currentProject.name }}</h2>
       @if (currentProject.additionalUrl) {
-      <a class="button" [href]="currentProject.additionalUrl[0]" target="_blank">
+      <a class="button not-mobile-only" [href]="currentProject.additionalUrl[0]" target="_blank">
         {{ currentProject.additionalUrl[1] }}
       </a>
+      <a class="button mobile-only" [href]="currentProject.additionalUrl[0]" target="_blank">
+        <img src="assets/projects/_actions/project_report.svg" alt="Project Report" />
+      </a>
       }
-      <a class="button" [href]="currentProject.url" target="_blank">Visit Project</a>
+      <a class="button not-mobile-only" [href]="currentProject.url" target="_blank">Visit Project</a>
+      <a class="button mobile-only" [href]="currentProject.url" target="_blank">
+        <img src="assets/projects/_actions/visit_project.svg" alt="Visit Project" />
+      </a>
     </div>
     <p>{{ currentProject.description }}</p>
     @if (currentProject.images) {

@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { Component, HostListener, input } from '@angular/core';
 import { UnpicImageDirective } from '@unpic/angular';
 import {
   Gallery,
@@ -21,27 +21,35 @@ export class GalleryComponent {
 
   gridSize = 3;
 
+  @HostListener('window:resize', ['$event'])
+  onResize() {
+    this.recalculateGalleryCount();
+  }
+
   constructor(public gallery: Gallery, public lightbox: Lightbox) {}
+
+  private recalculateGalleryCount() {
+    if (window.innerWidth < 1000) {
+      this.gridSize = 1;
+    } else {
+      this.gridSize = Math.min(Math.max(this.images().length, 2), 4);
+    }
+  }
 
   ngOnInit(): void {
     this.items = this.images().map(
       (item) => new ImageItem({ src: item, thumb: item })
     );
 
-    this.gridSize = Math.min(Math.max(this.images().length, 2), 4);
+    this.recalculateGalleryCount();
 
-    // Get a lightbox gallery ref
     const lightboxRef = this.gallery.ref('lightbox');
-
-    // Add custom gallery config to the lightbox (optional)
     lightboxRef.setConfig({
       imageSize: ImageSize.Contain,
       thumbPosition: ThumbnailsPosition.Top,
       thumbs: true,
       loop: true,
     });
-
-    // Load items into the lightbox gallery ref
     lightboxRef.load(this.items);
   }
 }

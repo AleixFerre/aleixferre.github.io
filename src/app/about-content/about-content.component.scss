@@ -21,7 +21,7 @@
       object-fit: contain;
       aspect-ratio: 1;
       filter: contrast(0.9) brightness(0.9);
-      padding: 1rem;
+      padding: 1em;
       width: min-content;
       height: min-content;
     }
@@ -42,7 +42,7 @@
     }
   }
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1000px) {
     display: flex;
     flex-direction: column;
   }
@@ -94,7 +94,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 2rem;
+    padding: 2em;
   }
 
   &.profile {
@@ -103,6 +103,10 @@
     background-position: center;
     background-repeat: no-repeat;
     position: relative;
+
+    @media screen and (max-width: 1000px) {
+      height: 25em;
+    }
 
     .profile-image {
       position: absolute;

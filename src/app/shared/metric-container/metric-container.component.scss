@@ -2,6 +2,10 @@
   font-size: 0.8em;
   text-align: center;
   margin: 0;
+
+  @media screen and (max-width: 1000px) {
+    font-size: 1.2em;
+  }
 }
 
 .metric {
@@ -10,6 +14,10 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  @media screen and (max-width: 1000px) {
+    font-size: 1.4em;
+  }
 
   .data {
     display: flex;
