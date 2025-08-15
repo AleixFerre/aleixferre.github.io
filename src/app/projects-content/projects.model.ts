@@ -38,7 +38,6 @@ const YuukoGamesProject: Project = {
   images: [
     '/assets/projects/yuukogames/yuukogames-1.webp',
     '/assets/projects/yuukogames/yuukogames-2.webp',
-    // '/assets/projects/yuukogames/yuukogames-3.webp',
   ],
   details: {
     'Main Focus': 'Game Development and Design',
@@ -63,7 +62,7 @@ const USignalsProject: Project = {
   id: 'usignals',
   name: 'USignals',
   description:
-    'A Unity package that provides a set of tools and functionalities for game development.',
+    'A Lightweight package that provides a simple and easy to use a reactive signal system for Unity.',
   url: 'https://github.com/Yuuko-Games/usignals',
   image: '/assets/projects/usignals/usignals.webp',
   backgroundImage: '/assets/projects/usignals/usignals_bg.webp',
@@ -232,7 +231,7 @@ const ASCIIShaderProject: Project = {
   id: 'ascii-shader',
   name: 'ASCII Shader',
   description:
-    'A shader for Untiy that converts your screen into a text-based ASCII art.',
+    'A shader for Unity that converts your screen into a text-based ASCII art.',
   url: 'https://aleixferre.itch.io/ascii-shader',
   image: '/assets/projects/ascii-shader/ascii-shader.webp',
   backgroundImage: '/assets/projects/ascii-shader/ascii-shader_bg.webp',
