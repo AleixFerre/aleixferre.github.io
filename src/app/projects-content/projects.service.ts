@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
+import { ALL_PROJECTS } from './projects.model';
 
 @Injectable({
   providedIn: 'root',
@@ -16,6 +17,18 @@ export class ProjectsService {
   }
 
   setCurrentlyActiveId(index: string | null): void {
+    if (index !== null) {
+      const foundProject = ALL_PROJECTS.find((x) => x.id === index);
+
+      if (!foundProject) {
+        this.router.navigate(['projects'], {
+          replaceUrl: true,
+          queryParamsHandling: 'replace',
+        });
+        return;
+      }
+    }
+
     this.currentProject.next(index);
 
     if (!index) {

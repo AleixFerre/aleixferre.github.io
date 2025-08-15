@@ -1,7 +1,7 @@
 import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { Router } from '@angular/router';
 import { TABS } from '../app.model';
 import { MetricContainerComponent } from '../shared/metric-container/metric-container.component';
-import { TabService } from '../tab.service';
 
 @Component({
   selector: 'app-about-content',
@@ -13,9 +13,12 @@ import { TabService } from '../tab.service';
 export class AboutContentComponent {
   age = new Date().getFullYear() - 2000;
 
-  constructor(public tabService: TabService) {}
+  constructor(public router: Router) {}
 
   goToContact() {
-    this.tabService.setCurrentTab(TABS.CONTACT);
+    this.router.navigate([TABS.CONTACT], {
+      replaceUrl: true,
+      queryParamsHandling: 'replace',
+    });
   }
 }

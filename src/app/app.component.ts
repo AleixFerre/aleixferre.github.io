@@ -42,12 +42,12 @@ export class AppComponent {
   ) {
     this.router.events.pipe(takeUntilDestroyed()).subscribe((event) => {
       if (event instanceof NavigationEnd) {
-        const name = event.url.split('/')[1] || TABS.HOME;
+        const name = event.urlAfterRedirects.split('/')[1] || TABS.HOME;
         this.tabService.setCurrentTab(name as TABS);
 
         if (name === TABS.PROJECTS) {
           this.projectsService.setCurrentlyActiveId(
-            event.url.split('/')[2] ?? null
+            event.urlAfterRedirects.split('/')[2] ?? null
           );
         }
       }
