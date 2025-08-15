@@ -28,6 +28,10 @@
 
     &.small {
       font-size: 3em;
+
+      @media screen and (max-width: 1300px) {
+        font-size: 2em;
+      }
     }
 
     .number {
