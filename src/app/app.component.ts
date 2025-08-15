@@ -9,6 +9,7 @@ import { ContactContentComponent } from './contact-content/contact-content.compo
 import { HomeContentComponent } from './home-content/home-content.component';
 import { ProjectsContentComponent } from './projects-content/projects-content.component';
 import { keepOrder } from './projects-content/projects-details/keepOrder';
+import { ProjectsService } from './projects-content/projects.service';
 import { TabService } from './tab.service';
 
 @Component({
@@ -34,16 +35,29 @@ export class AppComponent {
     string
   ][];
 
-  constructor(public tabService: TabService, private router: Router) {
+  constructor(
+    public tabService: TabService,
+    private projectsService: ProjectsService,
+    private router: Router
+  ) {
     this.router.events.pipe(takeUntilDestroyed()).subscribe((event) => {
       if (event instanceof NavigationEnd) {
-        const name = event.url.split('/')[1].toUpperCase();
-        this.tabService.setCurrentTab(name as TABS, false);
+        const name = event.url.split('/')[1] || TABS.HOME;
+        this.tabService.setCurrentTab(name as TABS);
+
+        if (name === TABS.PROJECTS) {
+          this.projectsService.setCurrentlyActiveId(
+            event.url.split('/')[2] ?? null
+          );
+        }
       }
     });
   }
 
   selectTab(tab: TABS) {
-    this.tabService.setCurrentTab(tab);
+    this.router.navigate([tab], {
+      replaceUrl: true,
+      queryParamsHandling: 'replace',
+    });
   }
 }

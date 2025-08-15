@@ -1,13 +1,13 @@
 export enum TABS {
-  HOME = 'HOME',
-  PROJECTS = 'PROJECTS',
-  ABOUT = 'ABOUT',
-  CONTACT = 'CONTACT',
+  HOME = 'home',
+  PROJECTS = 'projects',
+  ABOUT = 'about',
+  CONTACT = 'contact',
 }
 
 export const TABS_LIST: Record<TABS, string> = {
-  [TABS.HOME]: 'Home',
-  [TABS.PROJECTS]: 'Projects',
-  [TABS.ABOUT]: 'About',
-  [TABS.CONTACT]: 'Contact',
+  [TABS.HOME]: 'HOME',
+  [TABS.PROJECTS]: 'PROJECTS',
+  [TABS.ABOUT]: 'ABOUT',
+  [TABS.CONTACT]: 'CONTACT',
 };

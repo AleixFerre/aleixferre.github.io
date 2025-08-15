@@ -1,8 +1,8 @@
 import { NgClass } from '@angular/common';
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { TABS } from '../app.model';
 import { FEATURED_PROJECTS } from '../projects-content/projects.model';
-import { ProjectsService } from '../projects-content/projects.service';
 import { IconTextComponent } from '../shared/icon-text/icon-text.component';
 import { MetricContainerComponent } from '../shared/metric-container/metric-container.component';
 import { TabService } from '../tab.service';
@@ -16,17 +16,20 @@ import { TabService } from '../tab.service';
 export class HomeContentComponent {
   projects = FEATURED_PROJECTS;
 
-  constructor(
-    public tabService: TabService,
-    private projectsService: ProjectsService
-  ) {}
+  constructor(public tabService: TabService, private router: Router) {}
 
   selectGame(id: string) {
-    this.tabService.setCurrentTab(TABS.PROJECTS);
-    this.projectsService.setCurrentlyActiveId(id);
+    const url = [TABS.PROJECTS, id].filter((x) => x !== null);
+    this.router.navigate(url, {
+      replaceUrl: true,
+      queryParamsHandling: 'replace',
+    });
   }
 
   goToProfile() {
-    this.tabService.setCurrentTab(TABS.ABOUT);
+    this.router.navigate([TABS.ABOUT], {
+      replaceUrl: true,
+      queryParamsHandling: 'replace',
+    });
   }
 }

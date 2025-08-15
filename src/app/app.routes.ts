@@ -21,6 +21,13 @@ export const routes: Routes = [
     },
   },
   {
+    path: 'projects/:id',
+    component: ProjectsContentComponent,
+    data: {
+      tab: TABS.PROJECTS,
+    },
+  },
+  {
     path: 'about',
     component: AboutContentComponent,
     data: {

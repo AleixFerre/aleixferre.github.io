@@ -1,6 +1,7 @@
 import { DatePipe, KeyValuePipe, NgClass } from '@angular/common';
 import { Component } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import { Router } from '@angular/router';
 import { distinctUntilChanged } from 'rxjs';
 import { ALL_PROJECTS, DUMMY_PROJECT, Project } from '../projects.model';
 import { ProjectsService } from '../projects.service';
@@ -16,7 +17,7 @@ import { keepOrder } from './keepOrder';
 export class ProjectsDetailsComponent {
   keepOrder = keepOrder;
 
-  constructor(public projectsService: ProjectsService) {
+  constructor(public projectsService: ProjectsService, private router: Router) {
     this.projectsService.currentProject$
       .pipe(takeUntilDestroyed(), distinctUntilChanged())
       .subscribe(() => {
@@ -34,6 +35,15 @@ export class ProjectsDetailsComponent {
   }
 
   projects = ALL_PROJECTS;
+
+  setCurrentlyActiveId(id: string | null) {
+    const url = ['projects', id].filter((x) => x !== null);
+
+    this.router.navigate(url, {
+      replaceUrl: true,
+      queryParamsHandling: 'replace',
+    });
+  }
 
   findProject(id: string): Project {
     return this.projects.find((project) => project.id === id) || DUMMY_PROJECT;

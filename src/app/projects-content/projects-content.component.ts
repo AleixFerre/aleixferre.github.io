@@ -1,5 +1,6 @@
 import { NgClass } from '@angular/common';
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { ProjectsDetailsComponent } from './projects-details/projects-details.component';
 import { ALL_PROJECTS } from './projects.model';
 import { ProjectsService } from './projects.service';
@@ -13,5 +14,14 @@ import { ProjectsService } from './projects.service';
 export class ProjectsContentComponent {
   projects = ALL_PROJECTS;
 
-  constructor(public projectsService: ProjectsService) {}
+  constructor(public router: Router, public projectsService: ProjectsService) {}
+
+  setCurrentlyActiveId(id: string | null) {
+    const url = ['projects', id].filter((x) => x !== null);
+
+    this.router.navigate(url, {
+      replaceUrl: true,
+      queryParamsHandling: 'replace',
+    });
+  }
 }
