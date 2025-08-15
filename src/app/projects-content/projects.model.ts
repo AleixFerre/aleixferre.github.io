@@ -62,7 +62,7 @@ const USignalsProject: Project = {
   id: 'usignals',
   name: 'USignals',
   description:
-    'A Lightweight package that provides a simple and easy to use a reactive signal system for Unity.',
+    'A lightweight package that provides a simple and easy to use a reactive signal system for Unity.',
   url: 'https://github.com/Yuuko-Games/usignals',
   image: '/assets/projects/usignals/usignals.webp',
   backgroundImage: '/assets/projects/usignals/usignals_bg.webp',
