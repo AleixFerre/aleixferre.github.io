@@ -17,11 +17,12 @@ import { Lightbox, LightboxModule } from 'ng-gallery/lightbox';
 })
 export class GalleryComponent {
   readonly images = input<string[]>([]);
+  readonly thumbs = input<string[] | null>(null);
   items: GalleryItem[] = [];
 
   gridSize = 3;
 
-  @HostListener('window:resize', ['$event'])
+  @HostListener('window:resize')
   onResize() {
     this.recalculateGalleryCount();
   }
@@ -37,8 +38,10 @@ export class GalleryComponent {
   }
 
   ngOnInit(): void {
+    const thumbs = this.thumbs();
     this.items = this.images().map(
-      (item) => new ImageItem({ src: item, thumb: item })
+      (item, index) =>
+        new ImageItem({ src: item, thumb: thumbs?.[index] ?? item })
     );
 
     this.recalculateGalleryCount();
@@ -51,5 +54,10 @@ export class GalleryComponent {
       loop: true,
     });
     lightboxRef.load(this.items);
+  }
+
+  displayImages() {
+    const thumbs = this.thumbs();
+    return thumbs && thumbs.length ? thumbs : this.images();
   }
 }

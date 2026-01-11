@@ -4,7 +4,7 @@
   @for (item of projects; track $index) {
   <div class="box project" [class]="item.class" style="background-image: url('{{ item.backgroundImage }}');"
     (click)="setCurrentlyActiveId(item.id)">
-    <img [src]="item.image" [alt]="item.name" />
+    <img [src]="item.imageThumb ?? item.image" [alt]="item.name" />
   </div>
   }
 </div>
@@ -16,3 +16,4 @@
 @placeholder {
 <div></div>
 }
+

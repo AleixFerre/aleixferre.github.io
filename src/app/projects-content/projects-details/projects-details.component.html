@@ -7,7 +7,7 @@
   <div class="box project" style="background-image: url('{{ item.backgroundImage }}');"
     [class]="{'large': item.class === 'large', 'selected': projectsService.currentlyActiveId === item.id}"
     (click)="setCurrentlyActiveId(item.id)">
-    <img src="{{ item.image }}" class="inner" alt="{{ item.name }}" />
+    <img src="{{ item.imageThumb ?? item.image }}" class="inner" alt="{{ item.name }}" />
   </div>
   }
 </div>
@@ -37,7 +37,7 @@
     <div class="separator"></div>
     <p>{{ currentProject.description }}</p>
     @if (currentProject.images) {
-    <app-gallery [images]="currentProject.images"></app-gallery>
+    <app-gallery [images]="currentProject.images" [thumbs]="currentProject.imagesThumbs ?? null"></app-gallery>
     }
     @if (currentProject.details) {
     <h3>Details</h3>
@@ -78,3 +78,4 @@
   </div>
   }
 </div>
+

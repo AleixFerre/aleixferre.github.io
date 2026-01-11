@@ -5,8 +5,10 @@ export interface Project {
   url: string;
   additionalUrl?: [string, string]; // Optional field to indicate an additional URL to visit the project. Template: [URL, Title]
   image: string;
+  imageThumb?: string;
   backgroundImage: string;
   images: string[];
+  imagesThumbs?: string[];
   details: Record<string, string>; // Details about the project, such as technologies used, team members, main focus, challenges faced, etc.
   goodForYouIf?: string[]; // Optional field to indicate if the project is suitable for certain audiences. Template: Good for you if "You X".
   whatILearned?: string[]; // Optional field to indicate what the author learned from the project. Template: I learned "X".
@@ -15,7 +17,15 @@ export interface Project {
   class?: string;
 }
 
-export const DUMMY_PROJECT: Project = {
+const toThumb = (path: string) => path.replace(/\.webp$/i, '-thumb.webp');
+
+const withThumbs = (project: Project): Project => ({
+  ...project,
+  imageThumb: toThumb(project.image),
+  imagesThumbs: project.images.map(toThumb),
+});
+
+export const DUMMY_PROJECT: Project = withThumbs({
   id: '__dummy__',
   name: 'Dummy Project',
   description: 'You should never see this.',
@@ -25,9 +35,9 @@ export const DUMMY_PROJECT: Project = {
   images: [],
   details: {},
   createdAt: new Date(),
-};
+});
 
-const YuukoGamesProject: Project = {
+const YuukoGamesProject: Project = withThumbs({
   id: 'yuukogames',
   name: 'Yuuko Games',
   class: 'wide',
@@ -57,9 +67,9 @@ const YuukoGamesProject: Project = {
     'How to work in a team with other developers.',
   ],
   createdAt: new Date('2023-04-01'),
-};
+});
 
-const USignalsProject: Project = {
+const USignalsProject: Project = withThumbs({
   id: 'usignals',
   name: 'USignals',
   description:
@@ -84,9 +94,9 @@ const USignalsProject: Project = {
   ],
   createdAt: new Date('2025-01-01'),
   finishedAt: new Date('2025-03-02'),
-};
+});
 
-const TheForbiddenDoorProject: Project = {
+const TheForbiddenDoorProject: Project = withThumbs({
   id: 'the-forbidden-door',
   name: 'The Forbidden Door',
   class: 'wide',
@@ -120,9 +130,9 @@ const TheForbiddenDoorProject: Project = {
   ],
   createdAt: new Date('2023-04-01'),
   finishedAt: new Date('2025-04-01'),
-};
+});
 
-const MastersArenaProject: Project = {
+const MastersArenaProject: Project = withThumbs({
   id: 'masters-arena',
   name: 'Masters Arena',
   description:
@@ -157,9 +167,9 @@ const MastersArenaProject: Project = {
   ],
   createdAt: new Date('2021-03-01'),
   finishedAt: new Date('2022-01-02'),
-};
+});
 
-const EndlessDungeonProject: Project = {
+const EndlessDungeonProject: Project = withThumbs({
   id: 'endless-dungeon',
   name: 'Endless Dungeon',
   description:
@@ -192,9 +202,9 @@ const EndlessDungeonProject: Project = {
   ],
   createdAt: new Date('2021-07-01'),
   finishedAt: new Date('2021-07-02'),
-};
+});
 
-const AngryStewardessProject: Project = {
+const AngryStewardessProject: Project = withThumbs({
   id: 'angry-stewardess',
   name: 'The Angry Stewardess',
   description:
@@ -227,9 +237,9 @@ const AngryStewardessProject: Project = {
   ],
   createdAt: new Date('2022-09-01'),
   finishedAt: new Date('2022-09-02'),
-};
+});
 
-const ASCIIShaderProject: Project = {
+const ASCIIShaderProject: Project = withThumbs({
   id: 'ascii-shader',
   name: 'ASCII Shader',
   description:
@@ -259,9 +269,9 @@ const ASCIIShaderProject: Project = {
   ],
   createdAt: new Date('2021-03-01'),
   finishedAt: new Date('2021-04-01'),
-};
+});
 
-const DragThemOutIntoSpaceProject: Project = {
+const DragThemOutIntoSpaceProject: Project = withThumbs({
   id: 'drag-them-out-into-space',
   name: 'Drag Them Out Into Space',
   description:
@@ -295,9 +305,9 @@ const DragThemOutIntoSpaceProject: Project = {
   ],
   createdAt: new Date('2021-04-01'),
   finishedAt: new Date('2021-04-02'),
-};
+});
 
-const SmokeFighterProject: Project = {
+const SmokeFighterProject: Project = withThumbs({
   id: 'smoke-fighter',
   name: 'SmokeFighter',
   description:
@@ -329,9 +339,9 @@ const SmokeFighterProject: Project = {
   ],
   createdAt: new Date('2021-04-01'),
   finishedAt: new Date('2021-04-02'),
-};
+});
 
-const PraeliaProject: Project = {
+const PraeliaProject: Project = withThumbs({
   id: 'praelia',
   name: 'PRAELIA',
   description:
@@ -368,9 +378,9 @@ const PraeliaProject: Project = {
   ],
   createdAt: new Date('2019-10-01'),
   finishedAt: new Date('2020-01-01'),
-};
+});
 
-const AimDemoProject: Project = {
+const AimDemoProject: Project = withThumbs({
   id: 'aim-demo',
   name: 'AIM Demo',
   description:
@@ -400,9 +410,9 @@ const AimDemoProject: Project = {
   ],
   createdAt: new Date('2019-05-01'),
   finishedAt: new Date('2019-07-01'),
-};
+});
 
-const CataBotProject: Project = {
+const CataBotProject: Project = withThumbs({
   id: 'catabot',
   name: 'CataBot',
   description:
@@ -441,9 +451,9 @@ const CataBotProject: Project = {
   ],
   createdAt: new Date('2020-01-01'),
   finishedAt: new Date('2022-08-01'),
-};
+});
 
-const VeintiCuatroHorasAntesDelApocalipsisProject: Project = {
+const VeintiCuatroHorasAntesDelApocalipsisProject: Project = withThumbs({
   id: '24h-antes-del-apocalipsis',
   name: '24h Antes del Apocalipsis',
   description:
@@ -471,9 +481,9 @@ const VeintiCuatroHorasAntesDelApocalipsisProject: Project = {
   ],
   createdAt: new Date('2025-08-01'),
   finishedAt: new Date('2025-09-02'),
-};
+});
 
-const ElTrenDeLaVidaProject: Project = {
+const ElTrenDeLaVidaProject: Project = withThumbs({
   id: 'el-tren-de-la-vida',
   name: 'El tren de la vida',
   description:
@@ -513,7 +523,7 @@ const ElTrenDeLaVidaProject: Project = {
   ],
   createdAt: new Date('2025-11-21'),
   finishedAt: new Date('2025-11-23'),
-};
+});
 
 export const FEATURED_PROJECTS: Project[] = [
   YuukoGamesProject,
@@ -545,3 +555,7 @@ export const ALL_PROJECTS: Project[] = [
   PraeliaProject,
   AimDemoProject,
 ];
+
+
+
+

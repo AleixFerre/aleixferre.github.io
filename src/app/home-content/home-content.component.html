@@ -1,7 +1,7 @@
 @defer (on viewport) {
 <div class="grid">
   <div class="box profile" (click)="goToProfile()">
-    <img src="/assets/profile/yo_letra.webp" class="profile-image" alt="Aleix Ferré" />
+    <img src="/assets/profile/yo_letra-thumb.webp" class="profile-image" alt="Aleix Ferré" />
     <p class="name">Game Designer <br>& Developer</p>
   </div>
   <div class="box">
@@ -33,7 +33,7 @@
       @for (item of projects; track $index) {
       <div class="box project" style="background-image: url('{{ item.backgroundImage }}');"
         [class]="{'large': item.class === 'large'}" (click)="selectGame(item.id)">
-        <img src="{{ item.image }}" alt="{{ item.name }}" />
+        <img src="{{ item.imageThumb ?? item.image }}" alt="{{ item.name }}" />
       </div>
       }
     </div>
@@ -42,3 +42,4 @@
 } @placeholder {
 <div></div>
 }
+
